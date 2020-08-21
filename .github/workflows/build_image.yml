@@ -1,4 +1,4 @@
-name: CI
+name: Build and push docker image
 
 on:
   push:
@@ -19,3 +19,4 @@ jobs:
          # Docker repository to tag the image with
          repository: antoniszczepanik/ide
          tag: latest
+         push: true
