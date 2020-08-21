@@ -6,15 +6,15 @@ add_newline = false
 symbol = "➜"     # The "symbol" segment is being set to "➜"
 
 prompt_order = [
+    "battery",
     "username",
     "hostname",
-    "kubernetes",
+    "aws",
     "directory",
     "git_branch",
     "git_commit",
     "git_state",
     "git_status",
-    "hg_branch",
     "docker_context",
     "package",
     "dotnet",
@@ -44,7 +44,6 @@ prompt_order = [
     "custom",
     "line_break",
     "jobs",
-    "battery",
     "time",
     "character",
 ]
@@ -54,6 +53,15 @@ full_symbol = "🔋"
 charging_symbol = "⚡️"
 discharging_symbol = "💀"
 
-# Disable the package module, hiding it from the prompt completely
+[[battery.display]]
+threshold = 50
+style = "bold red"
+
+[aws]
+style = "bold blue"
+symbol = "🅰 "
+displayed_items = "region"
+
+Disable the package module, hiding it from the prompt completely
 [package]
 disabled = true

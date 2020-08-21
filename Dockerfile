@@ -15,7 +15,8 @@ RUN apt-get update \
     docker \
     zsh \
     locales \
-    python3-pip
+    python3-pip \
+    awscli
 
 # Set the locale
 RUN locale-gen en_US.UTF-8  
@@ -39,17 +40,18 @@ COPY .vimrc /root/
 
 RUN vim +BundleInstall +qall
 
-COPY .tmux.conf /root/
-# Install Tmux Plugin Manager & plugins
-RUN git clone https://github.com/tmux-plugins/tpm root/.tmux/plugins/tpm
 
 COPY .zshrc /root/
 RUN /bin/zsh -c "source /root/.zshrc" 
+
+COPY .tmux.conf /root/
+# Install Tmux Plugin Manager & plugins
+RUN git clone https://github.com/tmux-plugins/tpm root/.tmux/plugins/tpm
 
 COPY starship.toml /root/.config/
 COPY todo.sh /bin/
 
 
-WORKDIR /home
+WORKDIR /root
 ENTRYPOINT [ "/bin/zsh" ]
 CMD ["-l"]

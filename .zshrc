@@ -1,3 +1,4 @@
+if [ "$TMUX" = "" ]; then tmux; fi
 source /bin/antigen.zsh
 
 # Load the oh-my-zsh's library.
