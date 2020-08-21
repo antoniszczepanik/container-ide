@@ -1,4 +1,4 @@
-if [ "$TMUX" = "" ]; then tmux; fi
+if [ "$TMUX" = "" ]; then TERM=screen-256color-bce tmux; fi
 source /bin/antigen.zsh
 
 # Load the oh-my-zsh's library.
