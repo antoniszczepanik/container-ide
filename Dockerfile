@@ -52,6 +52,6 @@ COPY starship.toml /root/.config/
 COPY todo.sh /bin/
 
 
-WORKDIR /root
+WORKDIR /home
 ENTRYPOINT [ "/bin/zsh" ]
 CMD ["-l"]
