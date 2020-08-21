@@ -20,6 +20,9 @@ alias c="clear"
 alias e="exit"
 alias dev="docker run -it --rm dev"
 alias todo="/bin/todo.sh"
+# so that vim colorschemes work inside tmux
+alias tmux="TERM=screen-256color-bce tmux"
+
 # Set vim as default editior
 export VISUAL=vim
 export EDITOR="$VISUAL"
