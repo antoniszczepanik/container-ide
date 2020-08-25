@@ -9,6 +9,7 @@ RUN apt-get update \
     && apt-get -y install \
     git \
     vim-gtk3 \
+    xclip \
     tmux \
     htop \
     curl \
